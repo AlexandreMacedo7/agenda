@@ -14,12 +14,24 @@ public class Contato {
     private String numero;
     private String email;
 
+    @ManyToOne
+    private Categoria categoria;
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
     public Contato() {
     }
-    public Contato(String nome, String numero, String email) {
+    public Contato(String nome, String numero, String email, Categoria categoria) {
         this.nome = nome;
         this.numero = numero;
         this.email = email;
+        this.categoria = categoria;
     }
     @Transactional
     public void editarContatoNome(String nome){
@@ -36,6 +48,7 @@ public class Contato {
 
     @Override
     public String toString() {
-        return String.format("Id: %d - %s - contato: %s - email: %s", id, nome, numero, email);
+        return String.format("Id: %d - %s - contato: %s - email: %s - " +
+                "Categoria: %s", id, nome, numero, email,categoria);
     }
 }
