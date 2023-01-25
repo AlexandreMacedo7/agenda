@@ -1,0 +1,12 @@
+# Java build files
+target/
+
+# IntelliJ files
+.idea/
+*.iml
+*.iws
+
+# MySQL files
+*.sql
+
+persistence.xml
