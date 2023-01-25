@@ -5,11 +5,9 @@ import br.com.macedo.agenda.modelo.Contato;
 import br.com.macedo.agenda.util.JPAUtil;
 
 import javax.persistence.EntityManager;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TesteListarContatos {
-
 
     public static void main(String[] args) {
 

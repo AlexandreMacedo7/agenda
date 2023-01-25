@@ -21,4 +21,8 @@ public class ContatoDao {
         String jpql = "SELECT c From Contato c";
         return  entityManager.createQuery(jpql, Contato.class).getResultList();
     }
+    public void deletar(String nome){
+        String jpql = "Delete Contato c Where c.nome = :parametro";
+        entityManager.createQuery(jpql).setParameter("parametro", nome).executeUpdate();
+    }
 }
