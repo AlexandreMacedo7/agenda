@@ -4,6 +4,7 @@ import br.com.macedo.agenda.modelo.Categoria;
 
 import javax.persistence.Entity;
 import javax.persistence.EntityManager;
+import java.util.List;
 
 public class CategoriaDao {
 
@@ -13,6 +14,10 @@ public class CategoriaDao {
         this.entityManager = entityManager;
     }
     public void cadastrarCategoria(Categoria categoria){
-        entityManager.persist(categoria);
+        this.entityManager.persist(categoria);
+    }
+    public List<Categoria> listarCategorias(){
+        String jpql = "Select c From Categoria c";
+        return entityManager.createQuery(jpql,Categoria.class).getResultList();
     }
 }

@@ -12,13 +12,12 @@ public class TestarCriarCategoria {
 
     public static void main(String[] args) {
 
-    EntityManager entityManager = JPAUtil.getEntityManager();
-
         Categoria categoria = new Categoria("Amigos");
         Categoria categoria1 = new Categoria("Familia");
         Categoria categoria2 = new Categoria("Escola");
         Categoria categoria3 = new Categoria("Trabalho");
 
+        EntityManager entityManager = JPAUtil.getEntityManager();
         CategoriaDao categoriaDao = new CategoriaDao(entityManager);
 
         entityManager.getTransaction().begin();

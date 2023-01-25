@@ -9,11 +9,16 @@ public class Categoria {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String name;
+    private String nome;
 
     public Categoria() {
     }
-    public Categoria(String name) {
-        this.name = name;
+    public Categoria(String nome) {
+        this.nome = nome;
+    }
+
+    @Override
+    public String toString() {
+        return String.format("Categoria: %s", nome);
     }
 }
