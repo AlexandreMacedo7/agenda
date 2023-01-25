@@ -1,6 +1,7 @@
 package br.com.macedo.agenda.modelo;
 
 import javax.persistence.*;
+import javax.transaction.Transactional;
 
 @Entity
 @Table(name = "contatos")
@@ -18,6 +19,18 @@ public class Contato {
     public Contato(String nome, String numero, String email) {
         this.nome = nome;
         this.numero = numero;
+        this.email = email;
+    }
+    @Transactional
+    public void editarContatoNome(String nome){
+        this.nome = nome;
+    }
+    @Transactional
+    public void editarContatoNumero(String numero){
+        this.nome = numero;
+    }
+    @Transactional
+    public void editarContatoEmail(String email){
         this.email = email;
     }
 

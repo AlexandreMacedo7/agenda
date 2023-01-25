@@ -20,9 +20,9 @@ public class CadastroContatoTeste {
         entityManager.getTransaction().begin();
 
 
-        contatoDao.cadastrar(contato);
-        contatoDao.cadastrar(contato1);
-        contatoDao.cadastrar(contato2);
+        contatoDao.salvarContato(contato);
+        contatoDao.salvarContato(contato1);
+        contatoDao.salvarContato(contato2);
 
 
         entityManager.getTransaction().commit();

@@ -13,7 +13,7 @@ public class ContatoDao {
         this.entityManager = entityManager;
     }
 
-    public void cadastrar(Contato contato){
+    public void salvarContato(Contato contato){
         this.entityManager.persist(contato);
     }
 
@@ -21,8 +21,12 @@ public class ContatoDao {
         String jpql = "SELECT c From Contato c";
         return  entityManager.createQuery(jpql, Contato.class).getResultList();
     }
-    public void deletar(String nome){
+    public void deletarPorNome(String nome){
         String jpql = "Delete Contato c Where c.nome = :parametro";
         entityManager.createQuery(jpql).setParameter("parametro", nome).executeUpdate();
+    }
+    public Contato buscaPorNome(String nome){
+        String jpql = "Select c From Contato c Where c.nome = :parametro";
+        return entityManager.createQuery(jpql,Contato.class).setParameter("parametro", nome).getSingleResult();
     }
 }
