@@ -21,4 +21,8 @@ public class Contato {
         this.email = email;
     }
 
+    @Override
+    public String toString() {
+        return String.format("Id: %d - %s - contato: %s - email: %s", id, nome, numero, email);
+    }
 }
