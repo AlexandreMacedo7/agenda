@@ -19,7 +19,6 @@ public class CadastroContatoTeste {
 
         entityManager.getTransaction().begin();
 
-
         contatoDao.salvarContato(contato);
         contatoDao.salvarContato(contato1);
         contatoDao.salvarContato(contato2);
